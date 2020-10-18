@@ -4,6 +4,7 @@
     <meta charseat="UTF-8">
     <title>Atividade_PW01</title>
 
+    <!-- Edição CSS -->
 <style>
     div{align-items: center;
     flex-direction: row;
@@ -21,7 +22,8 @@
 <h3> Excluir: </h3><hr>
 
 <?php 
-
+    
+#Chamada do diretório
 $pasta = 'Usuarios/' . $_GET['dir'];
 
     if (rmdir($pasta)) {
