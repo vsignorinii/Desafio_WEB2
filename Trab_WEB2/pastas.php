@@ -4,6 +4,7 @@
     <meta charseat="UTF-8">
     <title>Atividade_PW01</title>
 
+    <!-- Edição CSS -->
 <style>
     div{align-items: center;
     flex-direction: row;
