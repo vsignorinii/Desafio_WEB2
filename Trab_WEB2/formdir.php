@@ -23,7 +23,7 @@
 
 <?php
 
-#Criação da Pasta 
+#Criação da Pasta /diretório
 $nomedir = $_POST['cod_dir'];
 $dir = "Usuarios/$nomedir";
 
@@ -32,7 +32,7 @@ if (is_dir($dir)) {
     echo '<br/>';
     echo '<a href="javascript:history.back()"><p> Voltar</p><a/>';
 } else {
-    mkdir($dir,0777);
+    mkdir($dir,0777); #cria a pasta
     echo 'Pasta criada com sucesso.';
     echo '<br/>';
     echo '<a href="javascript:history.back()"><p> Voltar</p><a/>';
@@ -40,14 +40,14 @@ if (is_dir($dir)) {
 }
 
 #Salvando o conteúdo em arquivo e movendo para PASTA.
-$nomearq = $_POST['name_dir'] . '.txt';
-$desc_arquivo = $_POST['desc_dir'];
-$arquivo = fopen($nomearq, 'w+' );
-fwrite($arquivo, $desc_arquivo);
-fclose($arquivo);
+$nomearq = $_POST['name_dir'] . '.txt'; #criando o arquivo txt
+$desc_arquivo = $_POST['desc_dir']; #adicionando a variavel com o valor do text area
+$arquivo = fopen($nomearq, 'w+' ); #abre arquivo
+fwrite($arquivo, $desc_arquivo); #escreve no arquivo
+fclose($arquivo); #fecha 
 
-$move_arquivo = "Usuarios/$nomedir/$nomearq";
-rename($nomearq, $move_arquivo);
+$move_arquivo = "Usuarios/$nomedir/$nomearq"; #diretório do arquivo
+rename($nomearq, $move_arquivo); #posiciona o arquivo dentro  da pasta
 
 ?>
 </div>
